@@ -9,7 +9,7 @@ API_URL="https://api.github.com"
 
 
 endpoint="repos/${REPO_OWNER}/${REPO_NAME}/collaborators"
-url="${API_URL}/${endpoint}
+url="${API_URL}/${endpoint}"
 
 REPO_OWNER=$1
 REPO_NAME=$2
