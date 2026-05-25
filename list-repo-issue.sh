@@ -27,7 +27,8 @@ function list_repository_issues {
 
 	local endpoint="repos/${REPO_OWNER}/${REPO_NAME}/issues"
 
-	issues="$(api_get "$endpoint" | jq -r '.[].title')"
+	issues="$(api_get "$endpoint" | jq -r '.[] | "\(.number) \(.title)"')"
+
 
 	if [[ -z "$issues" ]];  then 
 	      echo "NO repo issues found for ${REPO_OWNER}/${REPO_NAME}"
